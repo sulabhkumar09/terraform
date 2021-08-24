@@ -6,7 +6,7 @@ provider "aws" {
 resource "aws_instance" "web" {
   ami           = "ami-0c1a7f89451184c8b"
   instance_type = "t2.micro"
-  key_name      = "Terraform_Aug.pem"
+  key_name      = "Terraform_Aug"
   user_data     = "${file("httpd.sh")}"
   vpc_security_group_ids = ["${aws_security_group.webSG.id}"]
   tags = {
